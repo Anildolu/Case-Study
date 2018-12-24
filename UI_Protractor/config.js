@@ -62,7 +62,7 @@ exports.config = {
 
     /********************************** Test Scripts ***************************************/
     specs: [
-        "./specs/test_spec.js",
+        "./specs/gitlogin_spec.js",
     ],
 
 
