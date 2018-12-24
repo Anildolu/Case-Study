@@ -34,7 +34,7 @@ var reporter = new HtmlScreenshotReporter({
 exports.config = {
     allScriptsTimeout: 900000,
     seleniumAddress: process.env.SELENIUM_ADDR || 'http://localhost:4444/wd/hub',
-    baseUrl: process.env.BASE_URL || 'https://www.cognitivescale.com',
+    baseUrl: process.env.BASE_URL || 'https://github.com/',
     onPrepare: function () {
       
         var jasmineReporters = require('jasmine-reporters');

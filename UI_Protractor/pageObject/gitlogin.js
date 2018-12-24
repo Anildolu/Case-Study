@@ -7,8 +7,8 @@
 
 module.exports = {
     elements: {
-        company: element(by.id('menu-item-4535')),
-        carrers:element(by.id("menu-item-203")),
+        signin: element(by.css('.HeaderMenu-link no-underline mr-3')),
+        //carrers:element(by.id("menu-item-203")),
         // addCriteria: element(by.css('[ng-click="commissions.addCriteria()"]')),
         // commissionAddCriteriaDropdown: element.all(by.id="menu-item-203"id="menu-item-203"(".k-widget .k-input.ng-scope")).get(0),
         // PortfolioFilterBox: element.all(by.css(".k-widget.k-multiselect.multi-selector")).get(1),
