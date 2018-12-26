@@ -20,18 +20,18 @@ let restURL = function () {
         commit_message: "Shipped cool_feature!"
   };
    
-    // it(`TC-01 : test to create the new`, (done) => {
-    //   chai.request(restURL())
-    //     .post('repos/Anildolu/Case-Study/merges')
-    //     .send(postpayload)
-    //     .set('Authorization', config.basicAuth)
-    //     .end((err, res) => {
-    //       res.should.have.status(201);
-    //       done();
-    //     });
-    // });
-
     it(`TC-01 : test to create the new`, (done) => {
+      chai.request(restURL())
+        .post('repos/Anildolu/Case-Study/merges')
+        .send(postpayload)
+        .set('Authorization', config.basicAuth)
+        .end((err, res) => {
+          res.should.have.status(201);
+          done();
+        });
+    });
+
+    it(`TC-02 : test to create the new`, (done) => {
       let postpayload1={ 
         base: "master",
         head: "Anildolu-patch-5",

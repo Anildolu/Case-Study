@@ -4,6 +4,15 @@ var gitloginPage = require('../pageObject/gitlogin.js')
 
 module.exports = {
 
+
+    login(userName, password) {
+        gitloginPage.enterUserName(userName);
+        gitloginPage.enterPassword(password);
+        gitloginPage.clickSignIn();
+    },
+
+
+
     gitLoginUrl: function () {
         browser.get('https://github.com');
     },
@@ -15,7 +24,8 @@ module.exports = {
 
     gitlogin_withoutusername_password: function () {
         gitloginPage.elements.signinbutton.click();
-        expect(browser.getCurrentUrl()).toBe('https://github.com/session');
+        expect(gitloginPage.getErrorMessageText()).toBe("Incorrect username or password.")
+       // expect(browser.getCurrentUrl()).toBe('https://github.com/session');
     },
 
     gitlogin_withusername_withoutpassword: function () {

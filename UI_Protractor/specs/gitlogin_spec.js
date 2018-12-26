@@ -5,7 +5,7 @@ var gitlogin = require('../scripts/gitloginscript.js');
 describe("Gitlogin Page testing", function () {
     beforeAll(function (done) {
         browser.ignoreSynchronization = true;
-        gitlogin.gitLoginUrl();
+        gitlogin.login("","")
         done();
     });
 
