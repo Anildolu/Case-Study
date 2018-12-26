@@ -12,6 +12,7 @@ module.exports = {
         forgetpasswordtextbox:element(by.id('email_field')),
         password_reset_emailsend_button:element(by.css('.btn.btn-primary.btn-block')),
         return_signin_button:element(by.css('[href="/login"]')),
-        Create_account_link: element(by.css(".create-account-callout.mt-3"))
+        Create_account_link: element(by.css(".create-account-callout.mt-3")),
+        signin_button_create_account:element(by.css('.HeaderMenu-link.no-underline.mr-3'))
     },
 }

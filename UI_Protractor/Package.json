@@ -2,7 +2,7 @@
   "name": "UiAutomationtesting",
   "description": "e2e protractor tests.",
   "scripts": {
-    "test": "protractor config.js" 
+    "test": "protractor config.js"
   },
   "author": {
     "name": "Anil Dolu",
