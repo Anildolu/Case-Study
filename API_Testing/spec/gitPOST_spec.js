@@ -1,7 +1,7 @@
 // Require the dev-dependencies
 const chai = require('chai');
 const chaiHttp = require('chai-http');
- const config = require('./config');
+ const config = require('../config');
 // const helperInstance = require('../auth');
 const expect = chai.expect;
 
@@ -15,20 +15,37 @@ let restURL = function () {
 
   describe('POST - Negative scenarios tests', () => {
     let postpayload={ 
-      albumId: '1',
-      id: '120',
-      title: 'accusamus',
-      url: "https://via.placeholder.com/600/92c952",
-      thumbnailUrl: "https://via.placeholder.com/150/92c952"
+        base: "master",
+        head: "Anildolu-patch-4",
+        commit_message: "Shipped cool_feature!"
   };
    
-    it(`TC-01 : test to create the new `, (done) => {
+    // it(`TC-01 : test to create the new`, (done) => {
+    //   chai.request(restURL())
+    //     .post('repos/Anildolu/Case-Study/merges')
+    //     .send(postpayload)
+    //     .set('Authorization', config.basicAuth)
+    //     .end((err, res) => {
+    //       res.should.have.status(201);
+    //       done();
+    //     });
+    // });
+
+    it(`TC-01 : test to create the new`, (done) => {
+      let postpayload1={ 
+        base: "master",
+        head: "Anildolu-patch-5",
+        commit_message: "Shipped cool_feature!"
+          };
       chai.request(restURL())
-        .post('/posts')
-        .send(postpayload)
-       // .set('Authorization', helperInstance.getAuthHeaderSync())
+        .post('repos/Anildolu/Case-Study/merges')
+        .send(postpayload1)
+        .set('Authorization', config.basicAuth)
         .end((err, res) => {
-          res.should.have.status(201);
+          console.log(JSON.stringify(res));
+          res.should.have.status(404);
+          res.body.message
+          expect(res.body.message).to.contains("Head does not exist");
           done();
         });
     });

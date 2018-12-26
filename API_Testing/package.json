@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Rest API",
   "scripts": {
-    "test": "mocha post.spec.js"
+    "test": "mocha spec/gitPOST_spec.js"
   },
   "dependencies": {},
   "devDependencies": {

@@ -1,6 +1,7 @@
 'use strict';
 
-const BASE_URL = process.env.BASE_URL || 'https://jsonplaceholder.typicode.com';
+const BASE_URL = process.env.BASE_URL || 'https://api.github.com';
+const BASE_TOKEN =process.env.BASE_TOKEN || 'Basic ZG9sdWFuaWxAZ21haWwuY29tOkFuaWxAMTIxOA==';
 
 class Config {
   
@@ -9,6 +10,10 @@ class Config {
    */
   static get restBaseUrl() {
     return `${BASE_URL}`;
+  }
+
+  static get basicAuth(){
+    return `${BASE_TOKEN}`;
   }
 }
 
