@@ -32,6 +32,7 @@ var reporter = new HtmlScreenshotReporter({
 
 /********************************** URL and Reports ***************************************/
 exports.config = {
+    //directConnect: true,
     allScriptsTimeout: 900000,
     seleniumAddress: process.env.SELENIUM_ADDR || 'http://localhost:4444/wd/hub',
     baseUrl: process.env.BASE_URL || 'https://github.com/',
