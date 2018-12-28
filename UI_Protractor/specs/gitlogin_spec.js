@@ -1,50 +1,50 @@
-'use strict';
-var gitlogin = require('../scripts/gitloginscript.js');
+//'use strict';
+var gitLoginScript = require('../scripts/gitLoginScript.js');
+var gitLoginPage = require('../pageObject/gitLoginPage.js');
 
 
 describe("Gitlogin Page testing", function () {
     beforeAll(function (done) {
         browser.ignoreSynchronization = true;
-        gitlogin.login("","")
+        gitLoginScript.gitLoginUrl();
         done();
     });
 
-    it('Testing the sign in button', function () {
+    it('TC-01 Testing the signin button', function () {
         console.log(`-------------- ${global.testCaseName} --------------`);
         console.log(`${global.testStepName}`);
-        gitlogin.gitSigninButton();
-        
+        gitLoginScript.gitSigninButton();  
     });
 
-    it('Testing the login without username and password', function () {
+    it('TC-02 Testing the login without username and password', function () {
         console.log(`${global.testStepName}`);
-       gitlogin.gitlogin_withoutusername_password();
+        gitLoginScript.gitloginWithoutUsernamePassword();
     });
     it('Testing login with username and  without password', function () {
         console.log(`${global.testStepName}`);
-        gitlogin.gitlogin_withusername_withoutpassword();
+        gitLoginScript.gitloginWithUsernameWithoutPassword("doluanil@gmail.com","");
     });
 
     it('Testing login without username and  with password', function () {
         console.log(`${global.testStepName}`);
-        gitlogin.gitlogin_withoutusername_withpassword();
+        gitLoginScript.gitloginWithoutUsernameWithPassword("","Anil@1218");
         
     });
 
     it('Testing the forgot password', function () {
         console.log(`${global.testStepName}`);
-       gitlogin.git_forgot_password() 
+        gitLoginScript.gitForgotPassword();
     });
 
     it('Testing the creation of new account', function () {
         console.log(`${global.testStepName}`);
-        gitlogin.git_creation_newaccount()
+        gitLoginScript.gitCreatingNewaccount()
     });
     
 
     it('Testing the Git login by Passing Username and Password', function () {
         console.log(`${global.testStepName}`);
-       gitlogin.git_login()
+        gitLoginScript.login("doluanil@gmail.com","Anil@1218")
     });
 
 });
