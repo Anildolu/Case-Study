@@ -13,14 +13,14 @@ let restURL = function () {
   return config.restBaseUrl + '/';
 };
 
-  describe('POST - Negative scenarios tests', () => {
+  describe('POST -Test Scenario', () => {
     let postpayload={ 
         base: "master",
         head: "Anildolu-patch-4",
         commit_message: "Shipped cool_feature!"
   };
    
-    it(`TC-01 : test to create the new`, (done) => {
+    it(`TC-01 : test the git mearge`, (done) => {
       chai.request(restURL())
         .post('repos/Anildolu/Case-Study/merges')
         .send(postpayload)
@@ -31,7 +31,7 @@ let restURL = function () {
         });
     });
 
-    it(`TC-02 : test to create the new`, (done) => {
+    it(`TC-02 : test the git merge with invalid branch`, (done) => {
       let postpayload1={ 
         base: "master",
         head: "Anildolu-patch-5",
@@ -42,10 +42,9 @@ let restURL = function () {
         .send(postpayload1)
         .set('Authorization', config.basicAuth)
         .end((err, res) => {
-          console.log(JSON.stringify(res));
           res.should.have.status(404);
-          res.body.message
           expect(res.body.message).to.contains("Head does not exist");
+          expect(res.body.documentation_url).to.contains("https://developer.github.com/v3/repos/merging/#perform-a-merge");
           done();
         });
     });
