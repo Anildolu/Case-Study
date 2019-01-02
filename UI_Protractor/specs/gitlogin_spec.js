@@ -33,12 +33,12 @@ describe("Gitlogin Page testing", function () {
 
     it('TC-05 Testing login with username and  without password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.invalidlogin("doluanil@gmail.com", "");
+        gitLoginScript.invalidlogin("user@gmail.com", "");
     });
 
     it('TC-06 Testing login without username and  with password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.invalidlogin("", "Anil@1218");
+        gitLoginScript.invalidlogin("", "1218");
     });
     it('TC-07 Testing login with Invalid username and password', function () {
         console.log(`${global.testStepName}`);
@@ -47,7 +47,7 @@ describe("Gitlogin Page testing", function () {
 
     it('TC-08 Testing the Git login by Passing Valid Username and Password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.login("doluanil@gmail.com", "Anil@1218")
+        gitLoginScript.login("user@gmail.com", "1218")
     });
 
 });
