@@ -1,9 +1,6 @@
 # Case-Study
-API Testing
-
-The Case Study 
 
 
-Install
+### Install
 
-npm install
+`npm install`
