@@ -1,7 +1,7 @@
 'use strict';
 
 const BASE_URL =  'https://api.github.com';
-const BASE_TOKEN = '';
+const BASE_TOKEN = process.env.AUTH_TOKEN || '';
 
 class Config {
   
