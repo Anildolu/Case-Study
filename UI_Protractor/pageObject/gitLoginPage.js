@@ -14,23 +14,22 @@ module.exports = {
         returnSigninButton: element(by.css('[href="/login"]')),
         createAccountLink: element(by.css(".create-account-callout.mt-3")),
         signinButtonCreateAccount: element(by.css('.HeaderMenu-link.no-underline.mr-3')),
-        errorMessage: element(by.id('js-flash-container'))
+        errorMessage: element(by.id('js-flash-container')),
+        userProfile:element(by.css(".HeaderNavlink.name.mt-1"))
     },
 
     clickSignIn() {
         this.elements.signin.click();
     },
     enterUserName(text) {
-        this.elements.username.sendKeys(text);
+        this.elements.userName.sendKeys(text);
     },
-    clearUserName(){
-        this.elements.username.clear();
-    },
-    enterPassword(text){
-        this.elements.password.sendKeys(text); 
-    },
-    clearPassword(){
+    clearUserNameandPassword() {
+        this.elements.userName.clear();
         this.elements.password.clear();
+    },
+    enterPassword(text) {
+        this.elements.password.sendKeys(text);
     },
     clickSignInButtton() {
         this.elements.signinButton.click();
@@ -38,22 +37,25 @@ module.exports = {
     clickForgotPassword() {
         this.elements.forgotPassword.click();
     },
-    enterForgetPassordTextbox(text){
+    enterForgetPassordTextbox(text) {
         this.elements.forgotPasswordTextbox.sendKeys(text);
     },
     clickPasswordResetButton() {
         this.elements.passwordResetEmailButton.click();
     },
-    clickReturnSigninButton(){
+    clickReturnSigninButton() {
         this.elements.returnSigninButton.click();
     },
-    clickCreateAccountButton(){
-        this.createAccountLink.click();
+    clickCreateAccountButton() {
+        this.elements.createAccountLink.click();
     },
-    clickSignibButtonOfCreateAccount(){
-        this.signinButtonCreateAccount.click();
+    clickSignibButtonOfCreateAccount() {
+        this.elements.signinButtonCreateAccount.click();
     },
     getErrorMessageText() {
-        return this.elements.error_message.getText();
+        return this.elements.errorMessage.getText();
+    },
+    clickOnUserProfile(){
+        this.elements.userProfile.click();
     }
 }

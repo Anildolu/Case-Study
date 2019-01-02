@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 var gitLoginScript = require('../scripts/gitLoginScript.js');
 var gitLoginPage = require('../pageObject/gitLoginPage.js');
 
@@ -6,45 +6,48 @@ var gitLoginPage = require('../pageObject/gitLoginPage.js');
 describe("Gitlogin Page testing", function () {
     beforeAll(function (done) {
         browser.ignoreSynchronization = true;
-        gitLoginScript.gitLoginUrl();
+        gitLoginScript.navigateToLoginUrl();
         done();
     });
 
     it('TC-01 Testing the signin button', function () {
         console.log(`-------------- ${global.testCaseName} --------------`);
         console.log(`${global.testStepName}`);
-        gitLoginScript.gitSigninButton();  
+        gitLoginScript.clickGitSigninButton();
     });
 
-    it('TC-02 Testing the login without username and password', function () {
+    it('TC-02 Testing the forgot password functionality', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.gitloginWithoutUsernamePassword();
-    });
-    it('Testing login with username and  without password', function () {
-        console.log(`${global.testStepName}`);
-        gitLoginScript.gitloginWithUsernameWithoutPassword("","");
+        gitLoginScript.verifyForgotPassword();
     });
 
-    it('Testing login without username and  with password', function () {
+    it('TC-03 Testing the creation of new account functionality', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.gitloginWithoutUsernameWithPassword("","");
-        
+        gitLoginScript.verifyCreatingNewaccount()
     });
 
-    it('Testing the forgot password', function () {
+    it('TC-04 Testing the login without username and password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.gitForgotPassword();
+        gitLoginScript.invalidlogin("","");
     });
 
-    it('Testing the creation of new account', function () {
+    it('TC-05 Testing login with username and  without password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.gitCreatingNewaccount()
+        gitLoginScript.invalidlogin("doluanil@gmail.com", "");
     });
-    
 
-    it('Testing the Git login by Passing Username and Password', function () {
+    it('TC-06 Testing login without username and  with password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.login("","")
+        gitLoginScript.invalidlogin("", "Anil@1218");
+    });
+    it('TC-07 Testing login with Invalid username and password', function () {
+        console.log(`${global.testStepName}`);
+        gitLoginScript.invalidlogin("test", "123");
+    });
+
+    it('TC-08 Testing the Git login by Passing Valid Username and Password', function () {
+        console.log(`${global.testStepName}`);
+        gitLoginScript.login("doluanil@gmail.com", "Anil@1218")
     });
 
 });

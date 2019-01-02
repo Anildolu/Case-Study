@@ -1,7 +1,7 @@
 'use strict';
 
-const BASE_URL = process.env.BASE_URL || 'https://api.github.com';
-const BASE_TOKEN =process.env.BASE_TOKEN || '';
+const BASE_URL = process.env.BASE_URL || 'https://api.github.com';https://api.github.com/users/Anildolu/repos
+const BASE_TOKEN =process.env.BASE_TOKEN || 'Basic ==';
 
 class Config {
   
