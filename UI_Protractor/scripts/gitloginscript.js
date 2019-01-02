@@ -1,7 +1,6 @@
 //'use strict';
 var gitLoginPage = require('../pageObject/gitLoginPage.js')
 
-
 module.exports = {
     invalidlogin(userName, password) {
         gitLoginPage.enterUserName(userName);

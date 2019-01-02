@@ -2,7 +2,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
  const config = require('../config');
-// const helperInstance = require('../auth');
 const expect = chai.expect;
 
 chai.should();

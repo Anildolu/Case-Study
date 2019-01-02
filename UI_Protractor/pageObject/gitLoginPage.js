@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 module.exports = {
     elements: {
         signin: element(by.css('[href="/login"]')),

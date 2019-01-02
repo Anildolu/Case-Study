@@ -2,8 +2,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
  const config = require('../config');
-// const helperInstance = require('../auth');
-const gitExpect = require('../expectData/gitCommit.expectData.js');
 const expect = chai.expect;
 
 chai.should();

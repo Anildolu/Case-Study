@@ -2,13 +2,12 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const config = require('../config');
-// const helperInstance = require('../auth');
 const expect = chai.expect;
 
 chai.should();
 chai.use(chaiHttp);
 
-// Get the URL for counterparty API
+// Get the URL for git API
 let restURL = function () {
   return config.restBaseUrl + '/';
 };
