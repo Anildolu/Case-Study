@@ -18,16 +18,25 @@ Clone the repository
 ### Description
 
 This API_testing suite contains tests for the following github developers end points 
-1. get
-2. post
-3. delete
+1. GET
+2. POST
+3. DELETE
+
+
+## UI TESTING
 
 
 
+### Installation ...
 
-### UI TESTING
+#### Prerequisites
 
+`node v6+`
 
-### Install
+Clone the repository 
 
 `npm install`
+
+### Description
+
+This UI_Protractor suite covers github login with various scenarios. Forgot Password, Account creation are to name a few among them.
