@@ -4,7 +4,7 @@ The Case study is a test suite for github developer REST APIs. The suite is buil
 
 ## API TESTING
 
-#### Installation
+### Installation ...
 
 #### Prerequisites
 
@@ -13,6 +13,16 @@ The Case study is a test suite for github developer REST APIs. The suite is buil
 Clone the repository 
 
 `npm install`
+
+
+### Description
+
+This API_testing suite contains tests for the following github developers end points 
+1. get
+2. post
+3. delete
+
+
 
 
 ### UI TESTING
