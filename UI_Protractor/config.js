@@ -44,6 +44,7 @@ exports.config = {
             savePath: 'reports',
         }));
         jasmine.getEnv().addReporter(myReporter);
+        jasmine.getEnv().addReporter(reporter);
         // browser.driver.manage().window().maximize();
         browser.driver.manage().window().setSize(1920, 1080);
     },
@@ -69,14 +70,9 @@ exports.config = {
 
     /********************************** Login Credential ***************************************/
     params: {
-        credentials: {
+        creds: {
             userName: process.env.TEST_USER || '****', // Please replace with your own credentials when testing
             password: process.env.TEST_PASSWORD || '****'     
-        },
-        timeouts: {
-            waitForUrl: 180000,
-            waitForElement: 30000,
-        },
-        disableAnimation: true
+        }
     }
 }

@@ -47,7 +47,7 @@ describe("Gitlogin Page testing", function () {
 
     it('TC-08 Testing the Git login by Passing Valid Username and Password', function () {
         console.log(`${global.testStepName}`);
-        gitLoginScript.login("user@gmail.com", "1218")
+        gitLoginScript.login(browser.params.creds.userName, browser.params.creds.password)
     });
 
 });
