@@ -14,6 +14,10 @@ Clone the repository
 
 `npm install`
 
+To run the testcases 
+
+`npm test`
+
 
 ### Description
 
@@ -36,6 +40,10 @@ This API_testing suite contains tests for the following github developers end po
 Clone the repository 
 
 `npm install`
+
+To run the testcases 
+
+`npm test`
 
 ### Description
 
